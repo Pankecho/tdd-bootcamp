@@ -9,8 +9,7 @@ import XCTest
 @testable import MiniBootcamp
 
 class TweetCellTests: XCTestCase {
-    
-    var sut: TweetCell!
+    private var sut: TweetCell!
     
     override func setUp() {
         super.setUp()
@@ -26,7 +25,6 @@ class TweetCellTests: XCTestCase {
         
         // Then
         XCTAssertNotNil(sut)
-        
     }
     
     func testBackgroundIsSystem() {
@@ -38,6 +36,7 @@ class TweetCellTests: XCTestCase {
         let defaultThumb = UIImage(.gato)
         XCTAssertEqual(sut.userImageView.layer.cornerRadius, 25)
         XCTAssertTrue(sut.userImageView.clipsToBounds)
+        XCTAssertEqual(sut.userImageView.contentMode, .scaleAspectFit)
         XCTAssertEqual(sut.userImageView.image, defaultThumb)
     }
     
@@ -76,14 +75,95 @@ class TweetCellTests: XCTestCase {
     }
     
     func testAllSubviewsAreAddedAsSubviews() {
-        XCTAssertEqual(sut.subviews.count, 4)
+        XCTAssertEqual(sut.subviews.count, 5)
     }
-    
-    
+
+    func testCommentButton_initialConfiguration() {
+        // Given
+        let thumb = UIImage(.comment)
+        let tintColor = UIColor.redMain
+
+        // When
+
+        // Then
+        XCTAssertNotNil(sut.commentButton)
+        XCTAssertEqual(sut.commentButton.image(for: .normal), thumb)
+        XCTAssertTrue(sut.commentButton.clipsToBounds)
+        XCTAssertEqual(sut.commentButton.tintColor, tintColor)
+    }
+
+    func testRetweetButton_initialConfiguration() {
+        // Given
+        let thumb = UIImage(.ret)
+        let tintColor = UIColor.redMain
+
+        // When
+
+        // Then
+        XCTAssertNotNil(sut.retweetButton)
+        XCTAssertEqual(sut.retweetButton.image(for: .normal), thumb)
+        XCTAssertTrue(sut.retweetButton.clipsToBounds)
+        XCTAssertEqual(sut.retweetButton.tintColor, tintColor)
+    }
+
+    func testFavButton_initialConfiguration() {
+        // Given
+        let thumb = UIImage(.fav)
+        let tintColor = UIColor.redMain
+
+        // When
+
+        // Then
+        XCTAssertNotNil(sut.favButton)
+        XCTAssertEqual(sut.favButton.image(for: .normal), thumb)
+        XCTAssertTrue(sut.favButton.clipsToBounds)
+        XCTAssertEqual(sut.favButton.tintColor, tintColor)
+    }
+
+    func testShareButton_initialConfiguration() {
+        // Given
+        let thumb = UIImage(.share)
+        let tintColor = UIColor.redMain
+
+        // When
+
+        // Then
+        XCTAssertNotNil(sut.shareButton)
+        XCTAssertEqual(sut.shareButton.image(for: .normal), thumb)
+        XCTAssertTrue(sut.shareButton.clipsToBounds)
+        XCTAssertEqual(sut.shareButton.tintColor, tintColor)
+    }
+
+    func testButtonStackView() {
+        // Given
+
+        // When
+
+        // Then
+        XCTAssertNotNil(sut.buttonStackView)
+        XCTAssertEqual(sut.buttonStackView.axis, .horizontal)
+        XCTAssertEqual(sut.buttonStackView.distribution, .equalSpacing)
+        XCTAssertEqual(sut.buttonStackView.alignment, .center)
+        XCTAssertEqual(sut.buttonStackView.arrangedSubviews.count, 4)
+    }
+
+    func testConfigureCell() {
+        // Given
+        let nameText = "WizeBot"
+        let userName = "@Wizebot"
+        let text = "This is a text test"
+
+        // When
+        sut.configure(name: nameText, username: userName, text: text)
+
+        // Then
+        XCTAssertEqual(sut.nameLabel.text, nameText)
+        XCTAssertEqual(sut.usernameLabel.text, userName)
+        XCTAssertEqual(sut.contentLabel.text, text)
+    }
+
     override func tearDown() {
         super.tearDown()
         sut = nil
     }
-    
-    
 }
