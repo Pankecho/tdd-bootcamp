@@ -20,16 +20,19 @@ class TweetCell: UITableViewCell {
     }
     
     let nameLabel: UILabel = create {
+        $0.text = "Holaaaa"
         $0.font = UIFont.bold(withSize: .name)
         $0.adjustsFontSizeToFitWidth = true
     }
     
     let usernameLabel: UILabel = create {
+        $0.text = "@hellowizeline_"
         $0.font = UIFont.bold(withSize: .username)
         $0.textColor = UIColor.systemGray
     }
     
     let contentLabel: UILabel = create {
+        $0.text = "This is a test on showing about how a tweet content can be displayed on the TweetCell ✌🏼😎"
         $0.font = UIFont.normal(withSize: .content)
         $0.textColor = UIColor.label
         $0.numberOfLines = 0
