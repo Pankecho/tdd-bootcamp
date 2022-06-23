@@ -108,8 +108,7 @@ class TweetTimelineAPITests: XCTestCase {
         let expectation = expectation(description: "tweettimeline expectation")
         var timeline = [Tweet]()
         session.data = try TweetMock().tweetData()
-        
-        
+
         // when
         sut.load(.timeline) { result in
             switch result {
@@ -125,11 +124,8 @@ class TweetTimelineAPITests: XCTestCase {
         wait(for: [expectation], timeout: 3.0)
         XCTAssertNotEqual(timeline.count, 0)
     }
-    
-    
-    
+
     private class FakeSession: URLSession {
-        
         var data: Data?
         var error: Error?
         

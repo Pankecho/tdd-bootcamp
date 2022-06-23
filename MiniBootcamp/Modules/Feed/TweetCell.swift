@@ -70,7 +70,7 @@ class TweetCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        selectionStyle = .none
         backgroundColor = .systemBackground
         addSubview(nameLabel)
         addSubview(usernameLabel)
@@ -82,6 +82,7 @@ class TweetCell: UITableViewCell {
         buttonStackView.addArrangedSubview(retweetButton)
         buttonStackView.addArrangedSubview(favButton)
         buttonStackView.addArrangedSubview(shareButton)
+        layout()
     }
 
     public func configure(name: String, username: String, text: String) {

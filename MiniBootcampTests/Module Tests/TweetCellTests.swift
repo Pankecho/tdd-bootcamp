@@ -31,6 +31,10 @@ class TweetCellTests: XCTestCase {
         let systemBackground = UIColor.systemBackground
         XCTAssertEqual(sut.backgroundColor, systemBackground)
     }
+
+    func testSelectionStyle() {
+        XCTAssertEqual(sut.selectionStyle, .none)
+    }
     
     func testuserImageView_initialConfiguration() {
         let defaultThumb = UIImage(.gato)
