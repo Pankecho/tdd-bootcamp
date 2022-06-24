@@ -16,5 +16,4 @@ class TweetMock {
         return data
         
     }
-    
 }
