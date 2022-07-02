@@ -50,6 +50,9 @@
 		CB2D92532870FD8300FB4206 /* searchTweetsFake.json in Resources */ = {isa = PBXBuildFile; fileRef = CB2D92522870FD8300FB4206 /* searchTweetsFake.json */; };
 		CB2D92572870FEB800FB4206 /* SearchTweetModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92562870FEB800FB4206 /* SearchTweetModelTests.swift */; };
 		CB2D92592870FF0000FB4206 /* SearchTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92582870FF0000FB4206 /* SearchTweet.swift */; };
+		CB2D925B2870FFF200FB4206 /* SearchTweetAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D925A2870FFF200FB4206 /* SearchTweetAPITests.swift */; };
+		CB2D925D2871003700FB4206 /* SearchTweetMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D925C2871003700FB4206 /* SearchTweetMock.swift */; };
+		CB2D925F287100AF00FB4206 /* SearchTweetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D925E287100AF00FB4206 /* SearchTweetAPI.swift */; };
 		CB74A6122865567200EF2B1B /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74A6112865567200EF2B1B /* SearchViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +113,9 @@
 		CB2D92522870FD8300FB4206 /* searchTweetsFake.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = searchTweetsFake.json; sourceTree = "<group>"; };
 		CB2D92562870FEB800FB4206 /* SearchTweetModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetModelTests.swift; sourceTree = "<group>"; };
 		CB2D92582870FF0000FB4206 /* SearchTweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweet.swift; sourceTree = "<group>"; };
+		CB2D925A2870FFF200FB4206 /* SearchTweetAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetAPITests.swift; sourceTree = "<group>"; };
+		CB2D925C2871003700FB4206 /* SearchTweetMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetMock.swift; sourceTree = "<group>"; };
+		CB2D925E287100AF00FB4206 /* SearchTweetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetAPI.swift; sourceTree = "<group>"; };
 		CB74A6112865567200EF2B1B /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +213,7 @@
 			children = (
 				9A02091B281882BE007B47CE /* TweetTimelineAPI.swift */,
 				9A02091C281882BE007B47CE /* Endpoint.swift */,
+				CB2D925E287100AF00FB4206 /* SearchTweetAPI.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -265,6 +272,7 @@
 				9A3AC4FC286B5A5A0027AF05 /* TweetMock.swift */,
 				9A3AC4FE286B5AC60027AF05 /* UserMock.swift */,
 				CB2D92562870FEB800FB4206 /* SearchTweetModelTests.swift */,
+				CB2D925C2871003700FB4206 /* SearchTweetMock.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,6 +295,7 @@
 				9A5ED04C28627D4600B5AAF3 /* TweetTimelineAPITests.swift */,
 				CB2D92412870CB3900FB4206 /* FakeSession.swift */,
 				CB2D92432870CB6D00FB4206 /* MockData.swift */,
+				CB2D925A2870FFF200FB4206 /* SearchTweetAPITests.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -436,6 +445,7 @@
 				9A020924281882BF007B47CE /* User.swift in Sources */,
 				9A31C4FE28593A8E00BCEFD5 /* TweetCell.swift in Sources */,
 				9A64D3462822E34400D54132 /* UIFontExtensions.swift in Sources */,
+				CB2D925F287100AF00FB4206 /* SearchTweetAPI.swift in Sources */,
 				9A31C50028593FC400BCEFD5 /* UIImageExtension.swift in Sources */,
 				9A02092D281882BF007B47CE /* UIColorExtensions.swift in Sources */,
 				CB2D92592870FF0000FB4206 /* SearchTweet.swift in Sources */,
@@ -460,12 +470,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB2D925D2871003700FB4206 /* SearchTweetMock.swift in Sources */,
 				9A02093F281882D9007B47CE /* iOSViewControllerFactoryTests.swift in Sources */,
 				9AAF3B692822F7D900A679CA /* ObserverTests.swift in Sources */,
 				9A3AC4FF286B5AC60027AF05 /* UserMock.swift in Sources */,
 				9A020940281882D9007B47CE /* TweetModelTests.swift in Sources */,
 				9A31C4FC2859382D00BCEFD5 /* TweetCellTests.swift in Sources */,
 				CB2D92442870CB6D00FB4206 /* MockData.swift in Sources */,
+				CB2D925B2870FFF200FB4206 /* SearchTweetAPITests.swift in Sources */,
 				9A5ED04D28627D4600B5AAF3 /* TweetTimelineAPITests.swift in Sources */,
 				CB2D92472870CF8500FB4206 /* FeedViewModelTests.swift in Sources */,
 				9A3AC4FD286B5A5A0027AF05 /* TweetMock.swift in Sources */,
