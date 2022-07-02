@@ -42,8 +42,10 @@
 		9AD21A7B281AF3BE00A33F05 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD21A7A281AF3BE00A33F05 /* UIViewExtensions.swift */; };
 		CB2D92422870CB3900FB4206 /* FakeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92412870CB3900FB4206 /* FakeSession.swift */; };
 		CB2D92442870CB6D00FB4206 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92432870CB6D00FB4206 /* MockData.swift */; };
+		CB2D92472870CF8500FB4206 /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92462870CF8500FB4206 /* FeedViewModelTests.swift */; };
+		CB2D924A2870D00200FB4206 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92492870D00200FB4206 /* FeedViewModel.swift */; };
+		CB2D924D2870D3ED00FB4206 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D924C2870D3ED00FB4206 /* SearchViewController.swift */; };
 		CB74A6122865567200EF2B1B /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74A6112865567200EF2B1B /* SearchViewControllerTests.swift */; };
-		CB74A614286556C300EF2B1B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74A613286556C300EF2B1B /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +97,10 @@
 		9AD21A7A281AF3BE00A33F05 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		CB2D92412870CB3900FB4206 /* FakeSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSession.swift; sourceTree = "<group>"; };
 		CB2D92432870CB6D00FB4206 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		CB2D92462870CF8500FB4206 /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
+		CB2D92492870D00200FB4206 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		CB2D924C2870D3ED00FB4206 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CB74A6112865567200EF2B1B /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
-		CB74A613286556C300EF2B1B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 				9A0208E4281881CF007B47CE /* SceneDelegate.swift */,
 				9A020915281882BE007B47CE /* Composition */,
 				9A020912281882BE007B47CE /* Models */,
+				CB2D92482870CFED00FB4206 /* ViewModel */,
 				9A02091D281882BF007B47CE /* Modules */,
 				9A02091A281882BE007B47CE /* Networking */,
 				9AD21A79281AF39100A33F05 /* Extensions */,
@@ -156,11 +161,12 @@
 		9A0208F8281881D0007B47CE /* MiniBootcampTests */ = {
 			isa = PBXGroup;
 			children = (
+				CB2D92452870CF6500FB4206 /* ViewModel */,
 				9A5ED04B28627D3200B5AAF3 /* Networking */,
-				9A020930281882D9007B47CE /* Composition Tests */,
-				9A020933281882D9007B47CE /* Model Tests */,
-				9A02092E281882D9007B47CE /* Module Tests */,
-				9A020939281882D9007B47CE /* Utility Tests */,
+				9A020930281882D9007B47CE /* Composition */,
+				9A020933281882D9007B47CE /* Model */,
+				9A02092E281882D9007B47CE /* Module */,
+				9A020939281882D9007B47CE /* Utility */,
 			);
 			path = MiniBootcampTests;
 			sourceTree = "<group>";
@@ -197,7 +203,7 @@
 		9A02091D281882BF007B47CE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				CB74A6102865558700EF2B1B /* Search */,
+				CB2D924B2870D3C800FB4206 /* Search */,
 				9A02091E281882BF007B47CE /* Feed */,
 			);
 			path = Modules;
@@ -221,26 +227,26 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		9A02092E281882D9007B47CE /* Module Tests */ = {
+		9A02092E281882D9007B47CE /* Module */ = {
 			isa = PBXGroup;
 			children = (
 				9A02092F281882D9007B47CE /* FeedViewControllerTests.swift */,
 				CB74A6112865567200EF2B1B /* SearchViewControllerTests.swift */,
 				9A31C4FB2859382D00BCEFD5 /* TweetCellTests.swift */,
 			);
-			path = "Module Tests";
+			path = Module;
 			sourceTree = "<group>";
 		};
-		9A020930281882D9007B47CE /* Composition Tests */ = {
+		9A020930281882D9007B47CE /* Composition */ = {
 			isa = PBXGroup;
 			children = (
 				9A020931281882D9007B47CE /* MainCoordinatorTests.swift */,
 				9A020932281882D9007B47CE /* iOSViewControllerFactoryTests.swift */,
 			);
-			path = "Composition Tests";
+			path = Composition;
 			sourceTree = "<group>";
 		};
-		9A020933281882D9007B47CE /* Model Tests */ = {
+		9A020933281882D9007B47CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				9A020934281882D9007B47CE /* TweetModelTests.swift */,
@@ -248,10 +254,10 @@
 				9A3AC4FC286B5A5A0027AF05 /* TweetMock.swift */,
 				9A3AC4FE286B5AC60027AF05 /* UserMock.swift */,
 			);
-			path = "Model Tests";
+			path = Model;
 			sourceTree = "<group>";
 		};
-		9A020939281882D9007B47CE /* Utility Tests */ = {
+		9A020939281882D9007B47CE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				9A02093A281882D9007B47CE /* tweetFake.json */,
@@ -259,7 +265,7 @@
 				9A02093C281882D9007B47CE /* StaticFuncsTests.swift */,
 				9AAF3B682822F7D900A679CA /* ObserverTests.swift */,
 			);
-			path = "Utility Tests";
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		9A5ED04B28627D3200B5AAF3 /* Networking */ = {
@@ -283,10 +289,26 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		CB74A6102865558700EF2B1B /* Search */ = {
+		CB2D92452870CF6500FB4206 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CB74A613286556C300EF2B1B /* SearchViewController.swift */,
+				CB2D92462870CF8500FB4206 /* FeedViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB2D92482870CFED00FB4206 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB2D92492870D00200FB4206 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB2D924B2870D3C800FB4206 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CB2D924C2870D3ED00FB4206 /* SearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -397,12 +419,13 @@
 				9AAF3B6B2822F7F300A679CA /* Observer.swift in Sources */,
 				9A020924281882BF007B47CE /* User.swift in Sources */,
 				9A31C4FE28593A8E00BCEFD5 /* TweetCell.swift in Sources */,
-				CB74A614286556C300EF2B1B /* SearchViewController.swift in Sources */,
 				9A64D3462822E34400D54132 /* UIFontExtensions.swift in Sources */,
 				9A31C50028593FC400BCEFD5 /* UIImageExtension.swift in Sources */,
 				9A02092D281882BF007B47CE /* UIColorExtensions.swift in Sources */,
 				9A020927281882BF007B47CE /* ViewControllerFactory.swift in Sources */,
 				9A020926281882BF007B47CE /* MainCoordinator.swift in Sources */,
+				CB2D924A2870D00200FB4206 /* FeedViewModel.swift in Sources */,
+				CB2D924D2870D3ED00FB4206 /* SearchViewController.swift in Sources */,
 				9A02092A281882BF007B47CE /* Endpoint.swift in Sources */,
 				9A020925281882BF007B47CE /* iOSViewControllerFactory.swift in Sources */,
 				9A020929281882BF007B47CE /* TweetTimelineAPI.swift in Sources */,
@@ -426,6 +449,7 @@
 				9A31C4FC2859382D00BCEFD5 /* TweetCellTests.swift in Sources */,
 				CB2D92442870CB6D00FB4206 /* MockData.swift in Sources */,
 				9A5ED04D28627D4600B5AAF3 /* TweetTimelineAPITests.swift in Sources */,
+				CB2D92472870CF8500FB4206 /* FeedViewModelTests.swift in Sources */,
 				9A3AC4FD286B5A5A0027AF05 /* TweetMock.swift in Sources */,
 				9A02093D281882D9007B47CE /* FeedViewControllerTests.swift in Sources */,
 				CB2D92422870CB3900FB4206 /* FakeSession.swift in Sources */,

@@ -20,7 +20,6 @@ struct User: Codable {
 }
 
 extension User {
-    
     private enum CodingKeys: String, CodingKey {
         case name
         case nickname = "screen_name"

@@ -28,4 +28,9 @@ class TweetStub {
         let tweets = try tweets(number: number)
         return try JSONEncoder().encode(tweets)
     }
+
+    func tweetData() throws -> Data {
+        let tweet = try tweets(number: 1).first!
+        return try JSONEncoder().encode(tweet)
+    }
 }
