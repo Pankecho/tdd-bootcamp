@@ -9,7 +9,6 @@ import XCTest
 @testable import MiniBootcamp
 
 class UserModelTests: XCTestCase {
-    
     func test_userModel_correctDecodeResponse() throws {
         
         guard let path = Bundle(for: type(of: self)).path(forResource: "userFake", ofType: "json") else { fatalError("Couldn't find user-fake.json file") }

@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct Tweet: Decodable {
-    
+struct Tweet: Codable {
     let creation: String
     let id: String
     let text: String

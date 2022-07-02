@@ -9,7 +9,6 @@ import XCTest
 @testable import MiniBootcamp
 
 class iOSViewControllerFactoryTests: XCTestCase {
-    
     func test_feedViewController_isFeedViewControllerType() {
         
         let sut = iOSViewControllerFactory()

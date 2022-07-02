@@ -9,7 +9,6 @@ import Foundation
 @testable import MiniBootcamp
 
 class UserStub {
-    
     func tweetStub() throws -> User {
         guard let path = Bundle(for: type(of: self)).path(forResource: "userFake", ofType: "json") else { fatalError("Couldn't find user-fake.json file") }
         

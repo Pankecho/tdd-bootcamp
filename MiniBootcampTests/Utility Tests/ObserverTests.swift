@@ -9,7 +9,6 @@ import XCTest
 @testable import MiniBootcamp
 
 class ObserverTests: XCTestCase {
-    
     func test_initializeWithAnyType_objectIsNil() {
             let sutString = Observer<String>()
             let sutInt = Observer<Int>(nil)

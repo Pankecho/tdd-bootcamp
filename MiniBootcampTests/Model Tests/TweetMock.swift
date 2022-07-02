@@ -9,12 +9,10 @@ import Foundation
 @testable import MiniBootcamp
 
 class TweetStub {
-    
     func tweetStub() throws -> Tweet {
         guard let path = Bundle(for: type(of: self)).path(forResource: "tweetFake", ofType: "json") else { fatalError("Couldn't find tweetFake.json file") }
         
         let data = try Data(contentsOf: URL(fileURLWithPath: path))
-        print(try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed))
         return try JSONDecoder().decode(Tweet.self, from: data)
     }
     
@@ -24,5 +22,10 @@ class TweetStub {
             timeline.append(try tweetStub())
         }
         return timeline
+    }
+
+    func tweetsData(number: Int) throws -> Data {
+        let tweets = try tweets(number: number)
+        return try JSONEncoder().encode(tweets)
     }
 }

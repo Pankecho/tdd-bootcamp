@@ -107,7 +107,7 @@ class TweetTimelineAPITests: XCTestCase {
         // given
         let expectation = expectation(description: "tweettimeline expectation")
         var timeline = [Tweet]()
-        session.data = try TweetMock().tweetData()
+        session.data = try TweetStub().tweetsData(number: 3)
 
         // when
         sut.load(.timeline) { result in
@@ -122,38 +122,9 @@ class TweetTimelineAPITests: XCTestCase {
         
         // then
         wait(for: [expectation], timeout: 3.0)
-        XCTAssertNotEqual(timeline.count, 0)
+        XCTAssertEqual(timeline.count, 3)
     }
 
-    private class FakeSession: URLSession {
-        var data: Data?
-        var error: Error?
-        
-        override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-            
-            MockDataTask {
-                completionHandler(self.data, nil, self.error)
-            }
-            
-        }
-        
-    }
-    
-    private class MockDataTask: URLSessionDataTask {
-        
-        private let closure: () -> ()
-        
-        init(closure: @escaping () -> ()) {
-            self.closure = closure
-        }
-        
-        override func resume() {
-            closure()
-        }
-    }
-    
-    
-    
     override func tearDown() {
         super.tearDown()
         sut = nil
