@@ -18,13 +18,17 @@ final class FeedViewModel {
     var state: Observer<ViewModelState> = Observer<ViewModelState>()
     var tweets: [Tweet] = [Tweet]()
 
+    var tweetsCount: Int {
+        return tweets.count
+    }
+
     init(provider: TweetTimelineAPI) {
         self.provider = provider
     }
 
     func getTweets() {
         state.value = .loading
-        provider.load(.timeline) { [unowned self] result in
+        provider.load(.timeline) { result in
             switch result {
             case .success(let tweets):
                 self.tweets = tweets
@@ -33,5 +37,9 @@ final class FeedViewModel {
                 self.state.value = .failure
             }
         }
+    }
+
+    func getItem(at index: Int) -> TweetViewModel {
+        return .init(tweet: tweets[index])
     }
 }

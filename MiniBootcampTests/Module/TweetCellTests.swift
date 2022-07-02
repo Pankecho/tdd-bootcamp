@@ -154,7 +154,7 @@ class TweetCellTests: XCTestCase {
     func testConfigureCell() {
         // Given
         let nameText = "WizeBot"
-        let userName = "@Wizebot"
+        let userName = "Wizebot"
         let text = "This is a text test"
 
         // When
@@ -162,7 +162,7 @@ class TweetCellTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.nameLabel.text, nameText)
-        XCTAssertEqual(sut.usernameLabel.text, userName)
+        XCTAssertEqual(sut.usernameLabel.text, "@\(userName)")
         XCTAssertEqual(sut.contentLabel.text, text)
     }
 

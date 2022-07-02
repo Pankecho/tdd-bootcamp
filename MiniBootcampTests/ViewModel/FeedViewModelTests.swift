@@ -30,6 +30,7 @@ class FeedViewModelTests: XCTestCase {
     func test_getTweets_loading_state() {
       // When
       sut.getTweets()
+        
       // Then
       XCTAssertEqual(sut.state.value, .loading)
     }
@@ -98,6 +99,6 @@ class FeedViewModelTests: XCTestCase {
 
         // Then
         wait(for: [expectation], timeout: 4.0)
-        XCTAssertTrue(sut.tweets.count > 0)
+        XCTAssertTrue(sut.tweetsCount > 0)
     }
 }

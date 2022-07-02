@@ -17,7 +17,6 @@ class TweetTimelineAPITests: XCTestCase {
         super.setUp()
         session = FakeSession()
         sut = TweetTimelineAPI(session: session)
-        
     }
     
     func testNetworkResponse() {
@@ -30,7 +29,7 @@ class TweetTimelineAPITests: XCTestCase {
             response = true
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 3.0)
+        wait(for: [expectation], timeout: 5.0)
         XCTAssertTrue(response)
     }
     
@@ -52,7 +51,7 @@ class TweetTimelineAPITests: XCTestCase {
         }
         
         // then
-        wait(for: [expectation], timeout: 3.0)
+        wait(for: [expectation], timeout: 5.0)
         XCTAssertNotNil(expectedError)
     }
     
@@ -97,7 +96,7 @@ class TweetTimelineAPITests: XCTestCase {
         }
         
         // then
-        wait(for: [expectation], timeout: 3.0)
+        wait(for: [expectation], timeout: 5.0)
         let unwrappedError = try XCTUnwrap(expectedError)
         XCTAssertEqual(unwrappedError, .parsingData)
     }
@@ -121,7 +120,7 @@ class TweetTimelineAPITests: XCTestCase {
         }
         
         // then
-        wait(for: [expectation], timeout: 3.0)
+        wait(for: [expectation], timeout: 5.0)
         XCTAssertEqual(timeline.count, 3)
     }
 

@@ -87,7 +87,7 @@ class TweetCell: UITableViewCell {
 
     public func configure(name: String, username: String, text: String) {
         nameLabel.text = name
-        usernameLabel.text = username
+        usernameLabel.text = "@\(username)"
         contentLabel.text = text
     }
 

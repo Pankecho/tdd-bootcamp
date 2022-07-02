@@ -11,7 +11,8 @@ import UIKit
 class iOSViewControllerFactory: ViewControllerFactory {
     
     func feedViewController() -> UIViewController {
-        FeedViewController()
+        let vm = FeedViewModel(provider: TweetTimelineAPI(session: .shared))
+        return FeedViewController(viewModel: vm)
     }
     
 }

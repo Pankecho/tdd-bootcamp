@@ -37,6 +37,9 @@ class MainCoordinatorTests: XCTestCase {
 // MARK: - Stubs
 private class StubFactory: ViewControllerFactory {
     func feedViewController() -> UIViewController {
-        return FeedViewController()
+        let session = FakeSession()
+        let api = TweetTimelineAPI(session: session)
+        let vm = FeedViewModel(provider: api)
+        return FeedViewController(viewModel: vm)
     }
 }
