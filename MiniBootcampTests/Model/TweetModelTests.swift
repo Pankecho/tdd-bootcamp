@@ -13,7 +13,6 @@ class TweetModelTests: XCTestCase {
         guard let path = Bundle(for: type(of: self)).path(forResource: "tweetFake", ofType: "json") else { fatalError("Couldn't find tweetFake.json file") }
 
         let data = try Data(contentsOf: URL(fileURLWithPath: path))
-        print(try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed))
         let sut = try JSONDecoder().decode(Tweet.self, from: data)
 
         XCTAssertEqual(sut.id, "id")

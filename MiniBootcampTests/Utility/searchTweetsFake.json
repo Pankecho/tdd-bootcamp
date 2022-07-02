@@ -1,0 +1,33 @@
+{
+    "statuses": [
+        {
+            "created_at": "creation",
+            "id_str": "id",
+            "text": "This is an example",
+            "user": {
+                "name": "Wizeboot",
+                "screen_name": "@wizeboot",
+                "description": "description",
+                "location": "location",
+                "followers_count": 100,
+                "created_at": "creation",
+                "profile_background_color": "red",
+                "profile_image_url": "url",
+                "profile_background_image_url": "url"
+            },
+            "favorite_count": 100,
+            "retweet_count": 10
+        }
+    ],
+    "search_metadata" : {
+        "completed_in": 0.111,
+        "max_id": 1543360087477166000,
+        "max_id_str": "1543360087477166080",
+        "next_results": "?max_id=1543360065700249599&q=hello&include_entities=1",
+        "query": "hello",
+        "refresh_url": "?since_id=1543360087477166080&q=hello&include_entities=1",
+        "count": 15,
+        "since_id": 0,
+        "since_id_str": "0"
+    }
+}
