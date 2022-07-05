@@ -20,4 +20,10 @@ class SearchTweetStub {
         let search = try searchStub()
         return try JSONEncoder().encode(search)
     }
+
+    func errorSearchData() throws -> Data {
+        guard let path = Bundle(for: type(of: self)).path(forResource: "searchErrorFake", ofType: "json") else { fatalError("Couldn't find searchErrorFake.json file") }
+
+        return try Data(contentsOf: URL(fileURLWithPath: path))
+    }
 }

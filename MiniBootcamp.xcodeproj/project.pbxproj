@@ -53,7 +53,10 @@
 		CB2D925B2870FFF200FB4206 /* SearchTweetAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D925A2870FFF200FB4206 /* SearchTweetAPITests.swift */; };
 		CB2D925D2871003700FB4206 /* SearchTweetMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D925C2871003700FB4206 /* SearchTweetMock.swift */; };
 		CB2D925F287100AF00FB4206 /* SearchTweetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D925E287100AF00FB4206 /* SearchTweetAPI.swift */; };
+		CB2D92612871028C00FB4206 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92602871028C00FB4206 /* SearchViewModelTests.swift */; };
+		CB2D9263287102D000FB4206 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D9262287102D000FB4206 /* SearchViewModel.swift */; };
 		CB74A6122865567200EF2B1B /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74A6112865567200EF2B1B /* SearchViewControllerTests.swift */; };
+		CBDFEEDE2873CF9E0046440A /* searchErrorFake.json in Resources */ = {isa = PBXBuildFile; fileRef = CBDFEEDD2873CF9E0046440A /* searchErrorFake.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,7 +119,10 @@
 		CB2D925A2870FFF200FB4206 /* SearchTweetAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetAPITests.swift; sourceTree = "<group>"; };
 		CB2D925C2871003700FB4206 /* SearchTweetMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetMock.swift; sourceTree = "<group>"; };
 		CB2D925E287100AF00FB4206 /* SearchTweetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetAPI.swift; sourceTree = "<group>"; };
+		CB2D92602871028C00FB4206 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
+		CB2D9262287102D000FB4206 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		CB74A6112865567200EF2B1B /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
+		CBDFEEDD2873CF9E0046440A /* searchErrorFake.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = searchErrorFake.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +291,7 @@
 				CB2D92522870FD8300FB4206 /* searchTweetsFake.json */,
 				9A02093C281882D9007B47CE /* StaticFuncsTests.swift */,
 				9AAF3B682822F7D900A679CA /* ObserverTests.swift */,
+				CBDFEEDD2873CF9E0046440A /* searchErrorFake.json */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -316,6 +323,7 @@
 			children = (
 				CB2D92462870CF8500FB4206 /* FeedViewModelTests.swift */,
 				CB2D92502870D74F00FB4206 /* TweetViewModelTests.swift */,
+				CB2D92602871028C00FB4206 /* SearchViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -325,6 +333,7 @@
 			children = (
 				CB2D92492870D00200FB4206 /* FeedViewModel.swift */,
 				CB2D924E2870D72700FB4206 /* TweetViewModel.swift */,
+				CB2D9262287102D000FB4206 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -430,6 +439,7 @@
 				9A020944281882D9007B47CE /* tweetFake.json in Resources */,
 				CB2D92532870FD8300FB4206 /* searchTweetsFake.json in Resources */,
 				9A020945281882D9007B47CE /* userFake.json in Resources */,
+				CBDFEEDE2873CF9E0046440A /* searchErrorFake.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +468,7 @@
 				9A020929281882BF007B47CE /* TweetTimelineAPI.swift in Sources */,
 				9AD21A7B281AF3BE00A33F05 /* UIViewExtensions.swift in Sources */,
 				CB2D924F2870D72700FB4206 /* TweetViewModel.swift in Sources */,
+				CB2D9263287102D000FB4206 /* SearchViewModel.swift in Sources */,
 				9A02092B281882BF007B47CE /* FeedViewController.swift in Sources */,
 				9A020923281882BF007B47CE /* Tweet.swift in Sources */,
 				9A0208E3281881CF007B47CE /* AppDelegate.swift in Sources */,
@@ -478,6 +489,7 @@
 				9A31C4FC2859382D00BCEFD5 /* TweetCellTests.swift in Sources */,
 				CB2D92442870CB6D00FB4206 /* MockData.swift in Sources */,
 				CB2D925B2870FFF200FB4206 /* SearchTweetAPITests.swift in Sources */,
+				CB2D92612871028C00FB4206 /* SearchViewModelTests.swift in Sources */,
 				9A5ED04D28627D4600B5AAF3 /* TweetTimelineAPITests.swift in Sources */,
 				CB2D92472870CF8500FB4206 /* FeedViewModelTests.swift in Sources */,
 				9A3AC4FD286B5A5A0027AF05 /* TweetMock.swift in Sources */,

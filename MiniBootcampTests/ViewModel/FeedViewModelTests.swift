@@ -54,7 +54,7 @@ class FeedViewModelTests: XCTestCase {
         sut.getTweets()
 
         // Then
-        wait(for: [expectation], timeout: 4.0)
+        wait(for: [expectation], timeout: 5.0)
         XCTAssertTrue(changeState)
     }
 
@@ -77,7 +77,7 @@ class FeedViewModelTests: XCTestCase {
         sut.getTweets()
 
         // Then
-        wait(for: [expectation], timeout: 4.0)
+        wait(for: [expectation], timeout: 5.0)
         XCTAssertTrue(changeState)
     }
 
@@ -98,7 +98,7 @@ class FeedViewModelTests: XCTestCase {
         sut.getTweets()
 
         // Then
-        wait(for: [expectation], timeout: 4.0)
+        wait(for: [expectation], timeout: 5.0)
         XCTAssertTrue(sut.tweetsCount > 0)
     }
 }

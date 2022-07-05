@@ -72,7 +72,7 @@ class TweetTimelineAPITests: XCTestCase {
         }
         
         // then
-        wait(for: [expectation], timeout: 3.0)
+        wait(for: [expectation], timeout: 5.0)
         let unwrappedError = try XCTUnwrap(expectedError)
         XCTAssertEqual(unwrappedError, .noData)
     }
