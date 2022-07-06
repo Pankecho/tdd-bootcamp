@@ -36,6 +36,12 @@ class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.navigationItem.title, "Tweets")
     }
 
+    func test_topRight_searchButton() {
+        XCTAssertNotNil(sut.navigationItem)
+        XCTAssertNotNil(sut.navigationItem.rightBarButtonItem)
+        XCTAssertEqual(sut.navigationItem.rightBarButtonItem?.tintColor, .black)
+    }
+
     func test_vc_backgroundIsSystemBackground() {
         XCTAssertNotNil(sut.view?.backgroundColor)
         XCTAssertEqual(sut.view?.backgroundColor, .systemBackground)
@@ -83,5 +89,23 @@ class FeedViewControllerTests: XCTestCase {
         } else {
             XCTFail("tableView was not reloaded")
         }
+    }
+
+    func testViewController_delegate() {
+        let delegate = FeedDelegateMock()
+        sut.delegate = delegate
+
+        sut.goToSearch()
+
+        XCTAssertNotNil(sut.delegate)
+        XCTAssertEqual(delegate.counter, 1)
+    }
+}
+
+class FeedDelegateMock: FeedViewControllerDelegate {
+    var counter: Int = 0
+
+    func goToSearch() {
+        counter += 1
     }
 }

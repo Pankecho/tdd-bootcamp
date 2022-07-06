@@ -7,10 +7,16 @@
 
 import UIKit
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol FeedViewControllerDelegate: AnyObject {
+    func goToSearch()
+}
+
+class FeedViewController: UIViewController {
     let tableView: UITableView = create {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
+
+    weak var delegate: FeedViewControllerDelegate?
 
     let viewModel: FeedViewModel
 
@@ -25,7 +31,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Tweets" 
+        navigationItem.title = "Tweets"
+
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search,
+                                           target: self,
+                                           action: #selector(goToSearch))
+
+        searchButton.tintColor = .black
+        navigationItem.rightBarButtonItem = searchButton
+
         view.backgroundColor = .systemBackground
         tableView.dataSource = self
         tableView.register(TweetCell.self, forCellReuseIdentifier: "cell")
@@ -49,16 +63,22 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         viewModel.getTweets()
     }
-    
+
+    @objc func goToSearch() {
+        delegate?.goToSearch()
+    }
+}
+
+extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.tweets.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell",
                                                        for: indexPath) as? TweetCell,
-                viewModel.tweetsCount > 0 else { return TweetCell() }
-        
+              viewModel.tweetsCount > 0 else { return TweetCell() }
+
         let item = viewModel.getItem(at: indexPath.row)
         cell.configure(name: item.userName, username: item.screenName, text: item.content)
         return cell

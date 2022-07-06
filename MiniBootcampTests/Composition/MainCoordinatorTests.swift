@@ -9,7 +9,6 @@ import XCTest
 @testable import MiniBootcamp
 
 class MainCoordinatorTests: XCTestCase {
-    
     func test_empty_rootVCDoesNotHaveRootVC() {
         let sut = makeSUT(nv: UINavigationController())
         XCTAssertEqual(sut.rootViewController.viewControllers.count, 0)
@@ -27,6 +26,24 @@ class MainCoordinatorTests: XCTestCase {
         let feedVC = sut.rootViewController.viewControllers[0] as? FeedViewController
         XCTAssertNotNil(feedVC)
     }
+
+    func test_feedViewControllerDelegate() {
+        let sut = makeSUT(nv: UINavigationController(), factory: StubFactory())
+        sut.start()
+        let feedVC = sut.rootViewController.viewControllers[0] as? FeedViewController
+
+        XCTAssertNotNil(feedVC?.delegate)
+    }
+
+    func test_feedViewControllerDelegateTriggers() {
+        let sut = makeSUT(nv: UINavigationController(), factory: StubFactory())
+        sut.start()
+        let feedVC = sut.rootViewController.viewControllers[0] as? FeedViewController
+
+        feedVC?.goToSearch()
+
+        XCTAssertEqual(sut.rootViewController.viewControllers.count, 2)
+    }
     
     // MARK: - Helper Methods
     private func makeSUT(nv: UINavigationController = UINavigationController(), factory: ViewControllerFactory = StubFactory()) -> MainCoordinator {
@@ -40,7 +57,8 @@ private class StubFactory: ViewControllerFactory {
         let session = FakeSession()
         let api = TweetTimelineAPI(session: session)
         let vm = FeedViewModel(provider: api)
-        return FeedViewController(viewModel: vm)
+        let vc = FeedViewController(viewModel: vm)
+        return vc
     }
 
     func searchViewController() -> UIViewController {
