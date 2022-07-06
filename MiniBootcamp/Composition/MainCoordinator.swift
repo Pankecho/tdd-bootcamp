@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class MainCoordinator: Coordinator {
-    
     var rootViewController: UINavigationController
     var viewControllerFactory: ViewControllerFactory
     
@@ -21,5 +20,4 @@ class MainCoordinator: Coordinator {
     func start() {
         rootViewController.pushViewController(viewControllerFactory.feedViewController(), animated: false)
     }
-    
 }

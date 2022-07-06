@@ -32,4 +32,8 @@ final class SearchViewModel {
             }
         }
     }
+
+    func getItem(at index: Int) -> TweetViewModel {
+        return .init(tweet: item.items[index])
+    }
 }

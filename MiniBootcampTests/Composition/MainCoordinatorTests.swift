@@ -42,4 +42,11 @@ private class StubFactory: ViewControllerFactory {
         let vm = FeedViewModel(provider: api)
         return FeedViewController(viewModel: vm)
     }
+
+    func searchViewController() -> UIViewController {
+        let session = FakeSession()
+        let api = SearchTweetAPI(session: session)
+        let vm = SearchViewModel(provider: api)
+        return SearchViewController(viewModel: vm)
+    }
 }

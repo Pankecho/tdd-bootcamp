@@ -289,9 +289,9 @@
 				9A02093A281882D9007B47CE /* tweetFake.json */,
 				9A02093B281882D9007B47CE /* userFake.json */,
 				CB2D92522870FD8300FB4206 /* searchTweetsFake.json */,
+				CBDFEEDD2873CF9E0046440A /* searchErrorFake.json */,
 				9A02093C281882D9007B47CE /* StaticFuncsTests.swift */,
 				9AAF3B682822F7D900A679CA /* ObserverTests.swift */,
-				CBDFEEDD2873CF9E0046440A /* searchErrorFake.json */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
