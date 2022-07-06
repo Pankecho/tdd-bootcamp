@@ -101,4 +101,28 @@ class SearchViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 5.0)
         XCTAssertTrue(sut.tweetsCount > 0)
     }
+
+    func test_getItem() throws {
+        // Given
+        fakeSession.data = try SearchTweetStub().searchData()
+        let expectation = expectation(description: "Fetched tweet search")
+        sut.state.bind { state in
+            switch state {
+            case .success:
+                expectation.fulfill()
+            default:
+                break
+            }
+        }
+
+        // When
+        sut.search(with: "test")
+        wait(for: [expectation], timeout: 5.0)
+        let item = sut.getItem(at: 0)
+
+        // Then
+        XCTAssertEqual(item.content, "This is an example")
+        XCTAssertEqual(item.screenName, "@wizeboot")
+        XCTAssertEqual(item.userName, "Wizeboot")
+    }
 }

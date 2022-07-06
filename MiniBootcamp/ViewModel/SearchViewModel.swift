@@ -34,6 +34,7 @@ final class SearchViewModel {
     }
 
     func getItem(at index: Int) -> TweetViewModel {
+        guard index >= 0, index < tweetsCount else { fatalError("Index out of range") }
         return .init(tweet: item.items[index])
     }
 }

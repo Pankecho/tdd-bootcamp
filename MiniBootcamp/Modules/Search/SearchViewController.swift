@@ -31,6 +31,27 @@ final class SearchViewController: UIViewController {
         view.addSubview(tableView)
         
         tableView.anchor(top: view.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.bottomAnchor)
+
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Search tweets"
+        searchBar.delegate = self
+        searchBar.sizeToFit()
+
+        navigationItem.titleView = searchBar
+
+        viewModel.state.bind { state in
+            guard let state = state else { return }
+            switch state {
+            case .loading:
+                break
+            case .success:
+                DispatchQueue.main.async { [weak self] in
+                    self?.tableView.reloadData()
+                }
+            case .failure:
+                break
+            }
+        }
     }
 }
 
@@ -46,5 +67,13 @@ extension SearchViewController: UITableViewDataSource {
         let item = viewModel.getItem(at: indexPath.row)
         cell.configure(name: item.userName, username: item.screenName, text: item.content)
         return cell
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else { return }
+        searchBar.endEditing(true)
+        viewModel.search(with: text)
     }
 }

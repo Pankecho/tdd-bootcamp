@@ -54,4 +54,53 @@ class SearchViewControllerTests: XCTestCase {
 
         XCTAssertNotNil(cell)
     }
+
+    func testViewController_whenSearch_viewModel_state() {
+        // When
+        sut.viewModel.search(with: "Test")
+
+        // Then
+        XCTAssertEqual(sut.viewModel.state.value, .loading)
+    }
+
+    func testViewController_whenSearch_ReloadsTableView() throws {
+        // Given
+        fakeSession.data = try SearchTweetStub().searchData()
+        let expectation = expectation(description: "search tweets")
+        let result = XCTWaiter.wait(for: [expectation], timeout: 5.0)
+
+        // When
+        sut.viewModel.search(with: "test")
+
+        // Then
+        if result == XCTWaiter.Result.timedOut {
+            XCTAssertTrue((sut.tableView.dataSource?.tableView(sut.tableView, numberOfRowsInSection: 0))! == 0)
+        } else {
+            XCTFail("tableView was not reloaded")
+        }
+    }
+
+    func test_searchBar_navigationItem() {
+        let searchBar = sut.navigationItem.titleView as? UISearchBar
+        XCTAssertNotNil(searchBar)
+        XCTAssertEqual(searchBar?.placeholder, "Search tweets")
+        XCTAssertNotNil(searchBar?.delegate)
+    }
+
+    func test_searchBar_delegate() throws {
+        fakeSession.data = try SearchTweetStub().searchData()
+        let expectation = expectation(description: "search tweets")
+        let result = XCTWaiter.wait(for: [expectation], timeout: 5.0)
+        let searchBar = sut.navigationItem.titleView as? UISearchBar
+        searchBar?.text = "Test"
+
+        searchBar?.delegate?.searchBarCancelButtonClicked?(searchBar!)
+
+        // Then
+        if result == XCTWaiter.Result.timedOut {
+            XCTAssertTrue((sut.tableView.dataSource?.tableView(sut.tableView, numberOfRowsInSection: 0))! == 0)
+        } else {
+            XCTFail("tableView was not reloaded")
+        }
+    }
 }

@@ -26,7 +26,6 @@ struct SearchTweetAPI {
             do {
                 let search = try JSONDecoder().decode(SearchTweet.self, from: data)
                 completion(.success(search))
-
             } catch {
                 completion(.failure(TweetAPIError.parsingData))
             }
