@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: Decodable {
+struct User: Codable {
     let name: String
     let nickname: String
     let description: String
@@ -20,7 +20,6 @@ struct User: Decodable {
 }
 
 extension User {
-    
     private enum CodingKeys: String, CodingKey {
         case name
         case nickname = "screen_name"

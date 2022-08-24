@@ -15,6 +15,7 @@ class TweetCell: UITableViewCell {
     let userImageView: UIImageView = create {
         $0.image = UIImage(.gato)
         $0.layer.cornerRadius = 25
+        $0.contentMode = .scaleAspectFit
         $0.clipsToBounds = true
     }
     
@@ -37,23 +38,89 @@ class TweetCell: UITableViewCell {
         $0.numberOfLines = 0
     }
 
+    let commentButton: UIButton = create {
+        $0.setImage(UIImage(.comment), for: .normal)
+        $0.clipsToBounds = true
+        $0.tintColor = UIColor.redMain
+    }
+
+    let retweetButton: UIButton = create {
+        $0.setImage(UIImage(.ret), for: .normal)
+        $0.clipsToBounds = true
+        $0.tintColor = UIColor.redMain
+    }
+
+    let favButton: UIButton = create {
+        $0.setImage(UIImage(.fav), for: .normal)
+        $0.clipsToBounds = true
+        $0.tintColor = UIColor.redMain
+    }
+
+    let shareButton: UIButton = create {
+        $0.setImage(UIImage(.share), for: .normal)
+        $0.clipsToBounds = true
+        $0.tintColor = UIColor.redMain
+    }
+
+    let buttonStackView: UIStackView = create {
+        $0.axis = .horizontal
+        $0.alignment = .center
+        $0.distribution = .equalSpacing
+    }
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        selectionStyle = .none
         backgroundColor = .systemBackground
         addSubview(nameLabel)
         addSubview(usernameLabel)
         addSubview(userImageView)
         addSubview(contentLabel)
-        addConstraints()
+        addSubview(buttonStackView)
+
+        buttonStackView.addArrangedSubview(commentButton)
+        buttonStackView.addArrangedSubview(retweetButton)
+        buttonStackView.addArrangedSubview(favButton)
+        buttonStackView.addArrangedSubview(shareButton)
+        layout()
     }
-    
-    private func addConstraints() {
-        userImageView.anchor(top: topAnchor, leading: leadingAnchor, trailing: nil, bottom: nil, padding: .init(top: 12, left: 12, bottom: 0, right: 0), size: .init(width: 50, height: 50))
-        nameLabel.anchor(top: userImageView.topAnchor, leading: userImageView.trailingAnchor, trailing: trailingAnchor, bottom: nil, padding: .init(top: 0, left: 4, bottom: 0, right: 12), size: .init(width: 0, height: 20))
-        usernameLabel.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, trailing: nameLabel.trailingAnchor, bottom: nil, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: 0, height: 20))
-        contentLabel.anchor(top: usernameLabel.bottomAnchor, leading: usernameLabel.leadingAnchor, trailing: usernameLabel.trailingAnchor, bottom: bottomAnchor, padding: .init(top: 16, left: 0, bottom: 16, right: 0))
+
+    public func configure(name: String, username: String, text: String) {
+        nameLabel.text = name
+        usernameLabel.text = "@\(username)"
+        contentLabel.text = text
     }
-    
-    
+
+    private func layout() {
+        userImageView.anchor(top: topAnchor,
+                             leading: leadingAnchor,
+                             trailing: nil,
+                             bottom: nil,
+                             padding: .init(top: 12, left: 12, bottom: 12, right: 12),
+                             size: .init(width: 50, height: 50))
+
+        nameLabel.anchor(top: topAnchor,
+                         leading: userImageView.trailingAnchor,
+                         trailing: trailingAnchor,
+                         bottom: nil,
+                         padding: .init(top: 12, left: 12, bottom: 0, right: 12))
+
+        usernameLabel.anchor(top: nameLabel.bottomAnchor,
+                             leading: userImageView.trailingAnchor,
+                             trailing: trailingAnchor,
+                             bottom: nil,
+                             padding: .init(top: 8, left: 12, bottom: 0, right: 12))
+
+        contentLabel.anchor(top: usernameLabel.bottomAnchor,
+                             leading: userImageView.trailingAnchor,
+                             trailing: trailingAnchor,
+                             bottom: nil,
+                             padding: .init(top: 8, left: 12, bottom: 0, right: 12))
+
+        buttonStackView.anchor(top: contentLabel.bottomAnchor,
+                             leading: userImageView.trailingAnchor,
+                             trailing: trailingAnchor,
+                             bottom: bottomAnchor,
+                             padding: .init(top: 8, left: 12, bottom: 12, right: 12))
+    }
 }

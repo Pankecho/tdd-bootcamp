@@ -40,6 +40,23 @@
 		9AAF3B692822F7D900A679CA /* ObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAF3B682822F7D900A679CA /* ObserverTests.swift */; };
 		9AAF3B6B2822F7F300A679CA /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAF3B6A2822F7F300A679CA /* Observer.swift */; };
 		9AD21A7B281AF3BE00A33F05 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD21A7A281AF3BE00A33F05 /* UIViewExtensions.swift */; };
+		CB2D92422870CB3900FB4206 /* FakeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92412870CB3900FB4206 /* FakeSession.swift */; };
+		CB2D92442870CB6D00FB4206 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92432870CB6D00FB4206 /* MockData.swift */; };
+		CB2D92472870CF8500FB4206 /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92462870CF8500FB4206 /* FeedViewModelTests.swift */; };
+		CB2D924A2870D00200FB4206 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92492870D00200FB4206 /* FeedViewModel.swift */; };
+		CB2D924D2870D3ED00FB4206 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D924C2870D3ED00FB4206 /* SearchViewController.swift */; };
+		CB2D924F2870D72700FB4206 /* TweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D924E2870D72700FB4206 /* TweetViewModel.swift */; };
+		CB2D92512870D74F00FB4206 /* TweetViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92502870D74F00FB4206 /* TweetViewModelTests.swift */; };
+		CB2D92532870FD8300FB4206 /* searchTweetsFake.json in Resources */ = {isa = PBXBuildFile; fileRef = CB2D92522870FD8300FB4206 /* searchTweetsFake.json */; };
+		CB2D92572870FEB800FB4206 /* SearchTweetModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92562870FEB800FB4206 /* SearchTweetModelTests.swift */; };
+		CB2D92592870FF0000FB4206 /* SearchTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92582870FF0000FB4206 /* SearchTweet.swift */; };
+		CB2D925B2870FFF200FB4206 /* SearchTweetAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D925A2870FFF200FB4206 /* SearchTweetAPITests.swift */; };
+		CB2D925D2871003700FB4206 /* SearchTweetMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D925C2871003700FB4206 /* SearchTweetMock.swift */; };
+		CB2D925F287100AF00FB4206 /* SearchTweetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D925E287100AF00FB4206 /* SearchTweetAPI.swift */; };
+		CB2D92612871028C00FB4206 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D92602871028C00FB4206 /* SearchViewModelTests.swift */; };
+		CB2D9263287102D000FB4206 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D9262287102D000FB4206 /* SearchViewModel.swift */; };
+		CB74A6122865567200EF2B1B /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74A6112865567200EF2B1B /* SearchViewControllerTests.swift */; };
+		CBDFEEDE2873CF9E0046440A /* searchErrorFake.json in Resources */ = {isa = PBXBuildFile; fileRef = CBDFEEDD2873CF9E0046440A /* searchErrorFake.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +106,23 @@
 		9AAF3B682822F7D900A679CA /* ObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverTests.swift; sourceTree = "<group>"; };
 		9AAF3B6A2822F7F300A679CA /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		9AD21A7A281AF3BE00A33F05 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		CB2D92412870CB3900FB4206 /* FakeSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSession.swift; sourceTree = "<group>"; };
+		CB2D92432870CB6D00FB4206 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		CB2D92462870CF8500FB4206 /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
+		CB2D92492870D00200FB4206 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		CB2D924C2870D3ED00FB4206 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CB2D924E2870D72700FB4206 /* TweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModel.swift; sourceTree = "<group>"; };
+		CB2D92502870D74F00FB4206 /* TweetViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModelTests.swift; sourceTree = "<group>"; };
+		CB2D92522870FD8300FB4206 /* searchTweetsFake.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = searchTweetsFake.json; sourceTree = "<group>"; };
+		CB2D92562870FEB800FB4206 /* SearchTweetModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetModelTests.swift; sourceTree = "<group>"; };
+		CB2D92582870FF0000FB4206 /* SearchTweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweet.swift; sourceTree = "<group>"; };
+		CB2D925A2870FFF200FB4206 /* SearchTweetAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetAPITests.swift; sourceTree = "<group>"; };
+		CB2D925C2871003700FB4206 /* SearchTweetMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetMock.swift; sourceTree = "<group>"; };
+		CB2D925E287100AF00FB4206 /* SearchTweetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetAPI.swift; sourceTree = "<group>"; };
+		CB2D92602871028C00FB4206 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
+		CB2D9262287102D000FB4206 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		CB74A6112865567200EF2B1B /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
+		CBDFEEDD2873CF9E0046440A /* searchErrorFake.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = searchErrorFake.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +168,7 @@
 				9A0208E4281881CF007B47CE /* SceneDelegate.swift */,
 				9A020915281882BE007B47CE /* Composition */,
 				9A020912281882BE007B47CE /* Models */,
+				CB2D92482870CFED00FB4206 /* ViewModel */,
 				9A02091D281882BF007B47CE /* Modules */,
 				9A02091A281882BE007B47CE /* Networking */,
 				9AD21A79281AF39100A33F05 /* Extensions */,
@@ -148,11 +183,12 @@
 		9A0208F8281881D0007B47CE /* MiniBootcampTests */ = {
 			isa = PBXGroup;
 			children = (
+				CB2D92452870CF6500FB4206 /* ViewModel */,
 				9A5ED04B28627D3200B5AAF3 /* Networking */,
-				9A020930281882D9007B47CE /* Composition Tests */,
-				9A020933281882D9007B47CE /* Model Tests */,
-				9A02092E281882D9007B47CE /* Module Tests */,
-				9A020939281882D9007B47CE /* Utility Tests */,
+				9A020930281882D9007B47CE /* Composition */,
+				9A020933281882D9007B47CE /* Model */,
+				9A02092E281882D9007B47CE /* Module */,
+				9A020939281882D9007B47CE /* Utility */,
 			);
 			path = MiniBootcampTests;
 			sourceTree = "<group>";
@@ -162,6 +198,7 @@
 			children = (
 				9A020913281882BE007B47CE /* Tweet.swift */,
 				9A020914281882BE007B47CE /* User.swift */,
+				CB2D92582870FF0000FB4206 /* SearchTweet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +219,7 @@
 			children = (
 				9A02091B281882BE007B47CE /* TweetTimelineAPI.swift */,
 				9A02091C281882BE007B47CE /* Endpoint.swift */,
+				CB2D925E287100AF00FB4206 /* SearchTweetAPI.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -189,6 +227,7 @@
 		9A02091D281882BF007B47CE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CB2D924B2870D3C800FB4206 /* Search */,
 				9A02091E281882BF007B47CE /* Feed */,
 			);
 			path = Modules;
@@ -212,50 +251,58 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		9A02092E281882D9007B47CE /* Module Tests */ = {
+		9A02092E281882D9007B47CE /* Module */ = {
 			isa = PBXGroup;
 			children = (
 				9A02092F281882D9007B47CE /* FeedViewControllerTests.swift */,
+				CB74A6112865567200EF2B1B /* SearchViewControllerTests.swift */,
 				9A31C4FB2859382D00BCEFD5 /* TweetCellTests.swift */,
 			);
-			path = "Module Tests";
+			path = Module;
 			sourceTree = "<group>";
 		};
-		9A020930281882D9007B47CE /* Composition Tests */ = {
+		9A020930281882D9007B47CE /* Composition */ = {
 			isa = PBXGroup;
 			children = (
 				9A020931281882D9007B47CE /* MainCoordinatorTests.swift */,
 				9A020932281882D9007B47CE /* iOSViewControllerFactoryTests.swift */,
 			);
-			path = "Composition Tests";
+			path = Composition;
 			sourceTree = "<group>";
 		};
-		9A020933281882D9007B47CE /* Model Tests */ = {
+		9A020933281882D9007B47CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				9A020934281882D9007B47CE /* TweetModelTests.swift */,
 				9A020935281882D9007B47CE /* UserModelTests.swift */,
 				9A3AC4FC286B5A5A0027AF05 /* TweetMock.swift */,
 				9A3AC4FE286B5AC60027AF05 /* UserMock.swift */,
+				CB2D92562870FEB800FB4206 /* SearchTweetModelTests.swift */,
+				CB2D925C2871003700FB4206 /* SearchTweetMock.swift */,
 			);
-			path = "Model Tests";
+			path = Model;
 			sourceTree = "<group>";
 		};
-		9A020939281882D9007B47CE /* Utility Tests */ = {
+		9A020939281882D9007B47CE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				9A02093A281882D9007B47CE /* tweetFake.json */,
 				9A02093B281882D9007B47CE /* userFake.json */,
+				CB2D92522870FD8300FB4206 /* searchTweetsFake.json */,
+				CBDFEEDD2873CF9E0046440A /* searchErrorFake.json */,
 				9A02093C281882D9007B47CE /* StaticFuncsTests.swift */,
 				9AAF3B682822F7D900A679CA /* ObserverTests.swift */,
 			);
-			path = "Utility Tests";
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		9A5ED04B28627D3200B5AAF3 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				9A5ED04C28627D4600B5AAF3 /* TweetTimelineAPITests.swift */,
+				CB2D92412870CB3900FB4206 /* FakeSession.swift */,
+				CB2D92432870CB6D00FB4206 /* MockData.swift */,
+				CB2D925A2870FFF200FB4206 /* SearchTweetAPITests.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -269,6 +316,34 @@
 				9A31C4FF28593FC400BCEFD5 /* UIImageExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CB2D92452870CF6500FB4206 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB2D92462870CF8500FB4206 /* FeedViewModelTests.swift */,
+				CB2D92502870D74F00FB4206 /* TweetViewModelTests.swift */,
+				CB2D92602871028C00FB4206 /* SearchViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB2D92482870CFED00FB4206 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB2D92492870D00200FB4206 /* FeedViewModel.swift */,
+				CB2D924E2870D72700FB4206 /* TweetViewModel.swift */,
+				CB2D9262287102D000FB4206 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB2D924B2870D3C800FB4206 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CB2D924C2870D3ED00FB4206 /* SearchViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,7 +437,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A020944281882D9007B47CE /* tweetFake.json in Resources */,
+				CB2D92532870FD8300FB4206 /* searchTweetsFake.json in Resources */,
 				9A020945281882D9007B47CE /* userFake.json in Resources */,
+				CBDFEEDE2873CF9E0046440A /* searchErrorFake.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,14 +455,20 @@
 				9A020924281882BF007B47CE /* User.swift in Sources */,
 				9A31C4FE28593A8E00BCEFD5 /* TweetCell.swift in Sources */,
 				9A64D3462822E34400D54132 /* UIFontExtensions.swift in Sources */,
+				CB2D925F287100AF00FB4206 /* SearchTweetAPI.swift in Sources */,
 				9A31C50028593FC400BCEFD5 /* UIImageExtension.swift in Sources */,
 				9A02092D281882BF007B47CE /* UIColorExtensions.swift in Sources */,
+				CB2D92592870FF0000FB4206 /* SearchTweet.swift in Sources */,
 				9A020927281882BF007B47CE /* ViewControllerFactory.swift in Sources */,
 				9A020926281882BF007B47CE /* MainCoordinator.swift in Sources */,
+				CB2D924A2870D00200FB4206 /* FeedViewModel.swift in Sources */,
+				CB2D924D2870D3ED00FB4206 /* SearchViewController.swift in Sources */,
 				9A02092A281882BF007B47CE /* Endpoint.swift in Sources */,
 				9A020925281882BF007B47CE /* iOSViewControllerFactory.swift in Sources */,
 				9A020929281882BF007B47CE /* TweetTimelineAPI.swift in Sources */,
 				9AD21A7B281AF3BE00A33F05 /* UIViewExtensions.swift in Sources */,
+				CB2D924F2870D72700FB4206 /* TweetViewModel.swift in Sources */,
+				CB2D9263287102D000FB4206 /* SearchViewModel.swift in Sources */,
 				9A02092B281882BF007B47CE /* FeedViewController.swift in Sources */,
 				9A020923281882BF007B47CE /* Tweet.swift in Sources */,
 				9A0208E3281881CF007B47CE /* AppDelegate.swift in Sources */,
@@ -398,17 +481,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB2D925D2871003700FB4206 /* SearchTweetMock.swift in Sources */,
 				9A02093F281882D9007B47CE /* iOSViewControllerFactoryTests.swift in Sources */,
 				9AAF3B692822F7D900A679CA /* ObserverTests.swift in Sources */,
 				9A3AC4FF286B5AC60027AF05 /* UserMock.swift in Sources */,
 				9A020940281882D9007B47CE /* TweetModelTests.swift in Sources */,
 				9A31C4FC2859382D00BCEFD5 /* TweetCellTests.swift in Sources */,
+				CB2D92442870CB6D00FB4206 /* MockData.swift in Sources */,
+				CB2D925B2870FFF200FB4206 /* SearchTweetAPITests.swift in Sources */,
+				CB2D92612871028C00FB4206 /* SearchViewModelTests.swift in Sources */,
 				9A5ED04D28627D4600B5AAF3 /* TweetTimelineAPITests.swift in Sources */,
+				CB2D92472870CF8500FB4206 /* FeedViewModelTests.swift in Sources */,
 				9A3AC4FD286B5A5A0027AF05 /* TweetMock.swift in Sources */,
 				9A02093D281882D9007B47CE /* FeedViewControllerTests.swift in Sources */,
+				CB2D92422870CB3900FB4206 /* FakeSession.swift in Sources */,
 				9A020946281882D9007B47CE /* StaticFuncsTests.swift in Sources */,
+				CB2D92512870D74F00FB4206 /* TweetViewModelTests.swift in Sources */,
+				CB2D92572870FEB800FB4206 /* SearchTweetModelTests.swift in Sources */,
 				9A020941281882D9007B47CE /* UserModelTests.swift in Sources */,
 				9A02093E281882D9007B47CE /* MainCoordinatorTests.swift in Sources */,
+				CB74A6122865567200EF2B1B /* SearchViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +577,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -540,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -610,7 +702,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = abner.MiniBootcampTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -629,7 +721,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = abner.MiniBootcampTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

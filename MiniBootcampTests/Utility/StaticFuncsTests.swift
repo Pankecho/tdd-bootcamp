@@ -9,7 +9,6 @@ import XCTest
 @testable import MiniBootcamp
 
 class StaticFuncsTests: XCTestCase {
-    
     func test_createFunction() {
         let text = "This is a text test for create"
         let sut: UILabel = create {

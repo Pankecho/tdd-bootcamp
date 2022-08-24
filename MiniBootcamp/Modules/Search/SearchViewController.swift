@@ -1,51 +1,43 @@
 //
-//  FeedViewController.swift
-//  Mini bootcamp
+//  SearchViewController.swift
+//  MiniBootcamp
 //
-//  Created by Abner Castro on 07/04/22.
+//  Created by Juan Pablo Martinez Ruiz on 23/06/22.
 //
 
 import UIKit
 
-protocol FeedViewControllerDelegate: AnyObject {
-    func goToSearch()
-}
-
-class FeedViewController: UIViewController {
+final class SearchViewController: UIViewController {
     let tableView: UITableView = create {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
-
-    weak var delegate: FeedViewControllerDelegate?
-
-    let viewModel: FeedViewModel
-
-    init(viewModel: FeedViewModel) {
+    
+    let viewModel: SearchViewModel
+    
+    init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Tweets"
-
-        let searchButton = UIBarButtonItem(barButtonSystemItem: .search,
-                                           target: self,
-                                           action: #selector(goToSearch))
-
-        searchButton.tintColor = .black
-        navigationItem.rightBarButtonItem = searchButton
-
         view.backgroundColor = .systemBackground
         tableView.dataSource = self
         tableView.register(TweetCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
         
         tableView.anchor(top: view.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.bottomAnchor)
+
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Search tweets"
+        searchBar.delegate = self
+        searchBar.sizeToFit()
+
+        navigationItem.titleView = searchBar
 
         viewModel.state.bind { state in
             guard let state = state else { return }
@@ -60,27 +52,28 @@ class FeedViewController: UIViewController {
                 break
             }
         }
-
-        viewModel.getTweets()
-    }
-
-    @objc func goToSearch() {
-        delegate?.goToSearch()
     }
 }
 
-extension FeedViewController: UITableViewDataSource {
+extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.tweets.count
+        viewModel.tweetsCount
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell",
-                                                       for: indexPath) as? TweetCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TweetCell,
               viewModel.tweetsCount > 0 else { return TweetCell() }
-
+        
         let item = viewModel.getItem(at: indexPath.row)
         cell.configure(name: item.userName, username: item.screenName, text: item.content)
         return cell
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else { return }
+        searchBar.endEditing(true)
+        viewModel.search(with: text)
     }
 }

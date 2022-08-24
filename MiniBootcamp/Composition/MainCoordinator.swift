@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class MainCoordinator: Coordinator {
-    
     var rootViewController: UINavigationController
     var viewControllerFactory: ViewControllerFactory
     
@@ -19,7 +18,18 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        rootViewController.pushViewController(viewControllerFactory.feedViewController(), animated: false)
+        guard let vc = viewControllerFactory.feedViewController() as? FeedViewController else { return }
+        vc.delegate = self
+        rootViewController.pushViewController(vc, animated: false)
     }
-    
+
+    func pushSearchViewController() {
+        rootViewController.pushViewController(viewControllerFactory.searchViewController(), animated: false)
+    }
+}
+
+extension MainCoordinator: FeedViewControllerDelegate {
+    func goToSearch() {
+        pushSearchViewController()
+    }
 }

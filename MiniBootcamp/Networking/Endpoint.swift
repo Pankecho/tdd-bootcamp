@@ -11,6 +11,7 @@ enum Endpoint {
     static let baseURL = "https://wizetwitterproxy.herokuapp.com"
     
     case timeline
+    case search(String)
 }
 
 extension Endpoint {
@@ -18,6 +19,8 @@ extension Endpoint {
         switch self {
         case .timeline:
             return "/api/statuses/user_timeline"
+        case .search(_):
+            return "/api/search/"
         }
     }
     
@@ -25,6 +28,9 @@ extension Endpoint {
         switch self {
         case .timeline:
             let url = URL(string: Endpoint.baseURL + string)!
+            return URLRequest(url: url)
+        case .search(let value):
+            let url = URL(string: Endpoint.baseURL + string + value)!
             return URLRequest(url: url)
         }
     }

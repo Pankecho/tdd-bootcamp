@@ -10,4 +10,5 @@ import UIKit
 
 protocol ViewControllerFactory {
     func feedViewController() -> UIViewController
+    func searchViewController() -> UIViewController
 }
